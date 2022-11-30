@@ -16,20 +16,19 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Setup mongodb Connection
 const mongoose = require("mongoose");
-
-// mongoose.connect(
-//     `${process.env.MONGODB_URI}`,
-//     {
-//         useNewUrlParser: true,
-//         useFindAndModify: false,
-// useUnifiedTopology: true
-// }
-// );
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error: "));
-// db.once("open", function () {
-//     console.log("Connected successfully");
-// });
+mongoose.connect(
+    process.env.MONGODB_URL,
+    // 'mongodb+srv://admin:admin@cluster0.inwitqb.mongodb.net/?retryWrites=true&w=majority',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+);
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+    console.log("Connected successfully");
+});
 
 // Setup rooting
 app.use('/', require("./common/routes"))

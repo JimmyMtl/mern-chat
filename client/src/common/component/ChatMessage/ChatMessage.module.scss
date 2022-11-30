@@ -1,0 +1,50 @@
+.containerRow {
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 1rem;
+
+  &.userMessage {
+    flex-direction: row-reverse;
+
+    .message {
+      margin-left: auto;
+    }
+
+    .userLabel {
+      text-align: end;
+    }
+  }
+
+  .containerAvatar {
+    height: 30px;
+    width: 30px;
+    margin-top: auto;
+    margin-bottom: .5rem;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .containerMessageUserlabel {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    .message {
+      background-color: #16181c;
+      padding: .5rem 1rem;
+      border-radius: 5px;
+      max-width: 60%;
+      word-break: break-word;
+    }
+
+    .userLabel {
+      font-style: italic;
+      color: #8c96ad;
+    }
+  }
+}

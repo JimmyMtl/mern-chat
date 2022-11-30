@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = require('../User/modelUser')
+const User = require('../User/schemaUser')
 const Schema = mongoose.Schema
 const MessageSchema = new mongoose.Schema({
     message: {
@@ -8,14 +8,13 @@ const MessageSchema = new mongoose.Schema({
     },
     from: {
         type: Schema.Types.ObjectId,
-        ref: 'Message',
+        ref: 'User',
         required: true,
     },
     to: {
         type: Schema.Types.ObjectId,
-        ref: 'Message',
+        ref: 'User',
         required: true,
-
     }
 }, {timestamps: true});
 

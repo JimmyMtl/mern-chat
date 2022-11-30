@@ -1,13 +1,12 @@
 const express = require("express");
-const userModel = require("../../model/User/modelUser");
+const userModel = require("../../schema/User/schemaUser");
 const app = express();
 const router = express.Router();
-router.post("/user", async (request, response) => {
+router.post("/", async (request, response) => {
     const user = new userModel(request.body);
 
     try {
         const res = await user.save();
-        console.log(res)
         if(res){
             response.status(201).json(user);
         }
