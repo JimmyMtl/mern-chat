@@ -2,7 +2,7 @@ const express = require("express");
 const messageModel = require("../../model/Message/modelMessage");
 const app = express();
 const router = express.Router();
-router.post("/add_message", async (request, response) => {
+router.post("/message", async (request, response) => {
     const message = new messageModel(request.body);
 
     try {
